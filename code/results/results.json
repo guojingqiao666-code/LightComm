@@ -1,0 +1,5474 @@
+{
+  "config": {
+    "llm": {
+      "provider": "nvidia-nim-free",
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "api_key_env": "NVIDIA_API_KEY",
+      "models": {
+        "large": "nvidia/nemotron-3-super-120b-a12b",
+        "small": "nvidia/nemotron-3.5-lightning-30b-a3b"
+      },
+      "prices": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "input_per_mtok": 0.0,
+          "output_per_mtok": 0.0
+        },
+        "nvidia/nemotron-3.5-lightning-30b-a3b": {
+          "input_per_mtok": 0.0,
+          "output_per_mtok": 0.0
+        }
+      },
+      "timeout": 120,
+      "max_retries": 3
+    },
+    "experiment": {
+      "strategies": [
+        "single_agent",
+        "full_context",
+        "summary",
+        "action_state",
+        "lightcomm"
+      ],
+      "runs_per_config": 3,
+      "max_concurrency": 2,
+      "budget_usd_limit": 5.0,
+      "seed": 42,
+      "tasks": [
+        "multihop",
+        "bug_triage",
+        "doc_edit"
+      ],
+      "compressor_tier": "small",
+      "router_overrides": {}
+    }
+  },
+  "results": [
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 167,
+      "prompt_tokens": 60,
+      "completion_tokens": 107,
+      "wall_time_s": 6.002,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 611,
+      "prompt_tokens": 75,
+      "completion_tokens": 536,
+      "wall_time_s": 7.77,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 410,
+      "prompt_tokens": 66,
+      "completion_tokens": 344,
+      "wall_time_s": 6.936,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 1162,
+      "prompt_tokens": 75,
+      "completion_tokens": 1087,
+      "wall_time_s": 24.516,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": true,
+      "tokens": 536,
+      "prompt_tokens": 66,
+      "completion_tokens": 470,
+      "wall_time_s": 8.899,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": true,
+      "tokens": 167,
+      "prompt_tokens": 60,
+      "completion_tokens": 107,
+      "wall_time_s": 3.036,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": true,
+      "tokens": 978,
+      "prompt_tokens": 75,
+      "completion_tokens": 903,
+      "wall_time_s": 11.751,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "full_context",
+      "run": 1,
+      "success": true,
+      "tokens": 1735,
+      "prompt_tokens": 723,
+      "completion_tokens": 1012,
+      "wall_time_s": 15.76,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 402,
+          "wall_time": 5.374,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 3.585,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 921,
+          "wall_time": 10.384,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "full_context",
+      "run": 1,
+      "success": true,
+      "tokens": 719,
+      "prompt_tokens": 382,
+      "completion_tokens": 337,
+      "wall_time_s": 10.936,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 152,
+          "wall_time": 4.544,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 1.642,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 373,
+          "wall_time": 6.39,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "full_context",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "full_context",
+      "run": 2,
+      "success": true,
+      "tokens": 1977,
+      "prompt_tokens": 981,
+      "completion_tokens": 996,
+      "wall_time_s": 11.35,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 4.235,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 4.201,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 1156,
+          "wall_time": 7.115,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "full_context",
+      "run": 2,
+      "success": true,
+      "tokens": 717,
+      "prompt_tokens": 382,
+      "completion_tokens": 335,
+      "wall_time_s": 7.612,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 152,
+          "wall_time": 1.623,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 3.105,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 371,
+          "wall_time": 4.506,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "full_context",
+      "run": 2,
+      "success": true,
+      "tokens": 1576,
+      "prompt_tokens": 748,
+      "completion_tokens": 828,
+      "wall_time_s": 13.344,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 230,
+          "wall_time": 3.083,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 7.139,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 926,
+          "wall_time": 6.204,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 1814,
+      "prompt_tokens": 981,
+      "completion_tokens": 833,
+      "wall_time_s": 23.279,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 15.919,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 7.459,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 993,
+          "wall_time": 7.359,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 719,
+      "prompt_tokens": 382,
+      "completion_tokens": 337,
+      "wall_time_s": 7.305,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 153,
+          "wall_time": 2.364,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 3.674,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 372,
+          "wall_time": 3.631,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 1496,
+      "prompt_tokens": 748,
+      "completion_tokens": 748,
+      "wall_time_s": 10.553,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 312,
+          "wall_time": 3.123,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 7.174,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 764,
+          "wall_time": 3.378,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "summary",
+      "run": 1,
+      "success": true,
+      "tokens": 1659,
+      "prompt_tokens": 684,
+      "completion_tokens": 975,
+      "wall_time_s": 31.02,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 15.718,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 3.815,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 838,
+          "wall_time": 15.3,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "summary",
+      "run": 1,
+      "success": true,
+      "tokens": 728,
+      "prompt_tokens": 376,
+      "completion_tokens": 352,
+      "wall_time_s": 9.217,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 152,
+          "wall_time": 1.465,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 4.846,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 382,
+          "wall_time": 4.369,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "summary",
+      "run": 1,
+      "success": true,
+      "tokens": 1625,
+      "prompt_tokens": 614,
+      "completion_tokens": 1011,
+      "wall_time_s": 15.533,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 233,
+          "wall_time": 4.609,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 4.724,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 972,
+          "wall_time": 10.807,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "summary",
+      "run": 2,
+      "success": true,
+      "tokens": 1513,
+      "prompt_tokens": 687,
+      "completion_tokens": 826,
+      "wall_time_s": 11.733,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 3.389,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 9.199,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 692,
+          "wall_time": 2.533,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "summary",
+      "run": 2,
+      "success": true,
+      "tokens": 730,
+      "prompt_tokens": 376,
+      "completion_tokens": 354,
+      "wall_time_s": 5.7,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 153,
+          "wall_time": 1.398,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 2.113,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 383,
+          "wall_time": 3.586,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "summary",
+      "run": 2,
+      "success": true,
+      "tokens": 1236,
+      "prompt_tokens": 520,
+      "completion_tokens": 716,
+      "wall_time_s": 10.93,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 236,
+          "wall_time": 2.067,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 6.609,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 580,
+          "wall_time": 4.321,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 1887,
+      "prompt_tokens": 687,
+      "completion_tokens": 1200,
+      "wall_time_s": 16.748,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 9.691,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 4.405,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 1066,
+          "wall_time": 7.056,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 616,
+      "prompt_tokens": 368,
+      "completion_tokens": 248,
+      "wall_time_s": 11.58,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 145,
+          "wall_time": 2.015,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 9.759,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 277,
+          "wall_time": 1.82,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 1587,
+      "prompt_tokens": 598,
+      "completion_tokens": 989,
+      "wall_time_s": 19.263,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 211,
+          "wall_time": 9.908,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 3.193,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 956,
+          "wall_time": 9.353,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "action_state",
+      "run": 1,
+      "success": true,
+      "tokens": 1754,
+      "prompt_tokens": 554,
+      "completion_tokens": 1200,
+      "wall_time_s": 19.257,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 6.855,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 3.503,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 933,
+          "wall_time": 12.401,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "action_state",
+      "run": 1,
+      "success": true,
+      "tokens": 693,
+      "prompt_tokens": 418,
+      "completion_tokens": 275,
+      "wall_time_s": 5.17,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 152,
+          "wall_time": 1.321,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 2.162,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 347,
+          "wall_time": 3.007,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "action_state",
+      "run": 1,
+      "success": true,
+      "tokens": 1118,
+      "prompt_tokens": 513,
+      "completion_tokens": 605,
+      "wall_time_s": 7.763,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 230,
+          "wall_time": 4.783,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 5.04,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 468,
+          "wall_time": 2.722,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 1751,
+      "prompt_tokens": 551,
+      "completion_tokens": 1200,
+      "wall_time_s": 28.685,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 15.011,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 6.498,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 930,
+          "wall_time": 13.673,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 749,
+      "prompt_tokens": 418,
+      "completion_tokens": 331,
+      "wall_time_s": 9.444,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 152,
+          "wall_time": 1.969,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 5.48,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 403,
+          "wall_time": 3.962,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 1560,
+      "prompt_tokens": 546,
+      "completion_tokens": 1014,
+      "wall_time_s": 14.909,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 236,
+          "wall_time": 2.281,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 7.332,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 904,
+          "wall_time": 7.576,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "action_state",
+      "run": 3,
+      "success": false,
+      "tokens": 1757,
+      "prompt_tokens": 557,
+      "completion_tokens": 1200,
+      "wall_time_s": 25.294,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "浙江"
+          ]
+        ],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 409,
+          "wall_time": 15.996,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 412,
+          "wall_time": 5.612,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 936,
+          "wall_time": 9.296,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "action_state",
+      "run": 3,
+      "success": true,
+      "tokens": 746,
+      "prompt_tokens": 418,
+      "completion_tokens": 328,
+      "wall_time_s": 8.375,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 152,
+          "wall_time": 4.593,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 194,
+          "wall_time": 3.012,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 400,
+          "wall_time": 3.781,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "action_state",
+      "run": 3,
+      "success": true,
+      "tokens": 1532,
+      "prompt_tokens": 543,
+      "completion_tokens": 989,
+      "wall_time_s": 14.533,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 211,
+          "wall_time": 1.945,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 420,
+          "wall_time": 7.013,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 901,
+          "wall_time": 7.519,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": true,
+      "tokens": 1513,
+      "prompt_tokens": 568,
+      "completion_tokens": 945,
+      "wall_time_s": 62.486,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 409,
+          "wall_time": 46.794,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 412,
+          "wall_time": 52.078,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 692,
+          "wall_time": 10.406,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": true,
+      "tokens": 1277,
+      "prompt_tokens": 583,
+      "completion_tokens": 694,
+      "wall_time_s": 61.703,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 399,
+          "wall_time": 50.811,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 398,
+          "wall_time": 35.539,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 480,
+          "wall_time": 10.891,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": true,
+      "tokens": 1732,
+      "prompt_tokens": 658,
+      "completion_tokens": 1074,
+      "wall_time_s": 49.08,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 422,
+          "wall_time": 42.041,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 420,
+          "wall_time": 42.99,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 890,
+          "wall_time": 6.089,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": true,
+      "tokens": 1277,
+      "prompt_tokens": 583,
+      "completion_tokens": 694,
+      "wall_time_s": 103.403,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 399,
+          "wall_time": 87.24,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 398,
+          "wall_time": 97.447,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 480,
+          "wall_time": 5.955,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": true,
+      "tokens": 1862,
+      "prompt_tokens": 662,
+      "completion_tokens": 1200,
+      "wall_time_s": 94.361,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 422,
+          "wall_time": 85.696,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 420,
+          "wall_time": 74.157,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 1020,
+          "wall_time": 8.664,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa1",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 1378,
+      "prompt_tokens": 581,
+      "completion_tokens": 797,
+      "wall_time_s": 70.64,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "浙江"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 409,
+          "wall_time": 61.568,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 255,
+          "wall_time": 66.083,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 714,
+          "wall_time": 4.556,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa2",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 1277,
+      "prompt_tokens": 583,
+      "completion_tokens": 694,
+      "wall_time_s": 77.27,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "芬奇",
+            "列奥纳多",
+            "达芬奇"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 399,
+          "wall_time": 75.016,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 398,
+          "wall_time": 36.316,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 480,
+          "wall_time": 2.254,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "multihop",
+      "instance": "qa3",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 1862,
+      "prompt_tokens": 662,
+      "completion_tokens": 1200,
+      "wall_time_s": 51.48,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "keywords": [
+          [
+            "1970"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "id": "sub0",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 422,
+          "wall_time": 39.364,
+          "success": true
+        },
+        {
+          "id": "sub1",
+          "kind": "retrieve",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 420,
+          "wall_time": 37.172,
+          "success": true
+        },
+        {
+          "id": "syn",
+          "kind": "synthesize",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 1020,
+          "wall_time": 12.115,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": false,
+      "tokens": 505,
+      "prompt_tokens": 102,
+      "completion_tokens": 403,
+      "wall_time_s": 5.684,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 595,
+      "prompt_tokens": 79,
+      "completion_tokens": 516,
+      "wall_time_s": 10.591,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 740,
+      "prompt_tokens": 99,
+      "completion_tokens": 641,
+      "wall_time_s": 8.648,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 429,
+      "prompt_tokens": 102,
+      "completion_tokens": 327,
+      "wall_time_s": 3.544,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 639,
+      "prompt_tokens": 79,
+      "completion_tokens": 560,
+      "wall_time_s": 8.118,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": false,
+      "tokens": 513,
+      "prompt_tokens": 99,
+      "completion_tokens": 414,
+      "wall_time_s": 6.236,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": false,
+      "tokens": 287,
+      "prompt_tokens": 102,
+      "completion_tokens": 185,
+      "wall_time_s": 4.651,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": true,
+      "tokens": 885,
+      "prompt_tokens": 79,
+      "completion_tokens": 806,
+      "wall_time_s": 15.996,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": false,
+      "tokens": 532,
+      "prompt_tokens": 99,
+      "completion_tokens": 433,
+      "wall_time_s": 9.256,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "full_context",
+      "run": 1,
+      "success": false,
+      "tokens": 962,
+      "prompt_tokens": 663,
+      "completion_tokens": 299,
+      "wall_time_s": 8.277,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ],
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ],
+          [
+            "nullpointer",
+            "空指针",
+            "npe"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 1.783,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 250,
+          "wall_time": 5.427,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 439,
+          "wall_time": 2.849,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "full_context",
+      "run": 1,
+      "success": true,
+      "tokens": 896,
+      "prompt_tokens": 596,
+      "completion_tokens": 300,
+      "wall_time_s": 13.371,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 10.638,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 4.257,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 464,
+          "wall_time": 2.732,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "full_context",
+      "run": 1,
+      "success": true,
+      "tokens": 996,
+      "prompt_tokens": 696,
+      "completion_tokens": 300,
+      "wall_time_s": 7.032,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 4.245,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 1.96,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 484,
+          "wall_time": 2.786,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "full_context",
+      "run": 2,
+      "success": false,
+      "tokens": 965,
+      "prompt_tokens": 665,
+      "completion_tokens": 300,
+      "wall_time_s": 9.766,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ],
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ],
+          [
+            "nullpointer",
+            "空指针",
+            "npe"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 3.013,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 251,
+          "wall_time": 6.532,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 441,
+          "wall_time": 3.232,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "full_context",
+      "run": 2,
+      "success": false,
+      "tokens": 897,
+      "prompt_tokens": 597,
+      "completion_tokens": 300,
+      "wall_time_s": 17.96,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "上传",
+            "头像",
+            "功能异常"
+          ]
+        ],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 2.762,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 11.609,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 465,
+          "wall_time": 6.35,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "full_context",
+      "run": 2,
+      "success": true,
+      "tokens": 957,
+      "prompt_tokens": 697,
+      "completion_tokens": 260,
+      "wall_time_s": 7.317,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 4.44,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 1.807,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 445,
+          "wall_time": 2.876,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "full_context",
+      "run": 3,
+      "success": false,
+      "tokens": 1011,
+      "prompt_tokens": 711,
+      "completion_tokens": 300,
+      "wall_time_s": 12.865,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ],
+          [
+            "nullpointer",
+            "空指针",
+            "npe"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 9.495,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 251,
+          "wall_time": 4.923,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 487,
+          "wall_time": 3.369,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 897,
+      "prompt_tokens": 597,
+      "completion_tokens": 300,
+      "wall_time_s": 15.729,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 11.774,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 4.793,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 465,
+          "wall_time": 3.955,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 996,
+      "prompt_tokens": 696,
+      "completion_tokens": 300,
+      "wall_time_s": 10.133,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 2.177,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 2.081,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 484,
+          "wall_time": 7.956,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "summary",
+      "run": 1,
+      "success": false,
+      "tokens": 1004,
+      "prompt_tokens": 704,
+      "completion_tokens": 300,
+      "wall_time_s": 17.856,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ],
+          [
+            "nullpointer",
+            "空指针",
+            "npe"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 5.8,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 251,
+          "wall_time": 10.769,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 480,
+          "wall_time": 7.086,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "summary",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "summary",
+      "run": 1,
+      "success": true,
+      "tokens": 990,
+      "prompt_tokens": 690,
+      "completion_tokens": 300,
+      "wall_time_s": 7.989,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 4.971,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 1.554,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 478,
+          "wall_time": 3.017,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "summary",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "summary",
+      "run": 2,
+      "success": true,
+      "tokens": 891,
+      "prompt_tokens": 591,
+      "completion_tokens": 300,
+      "wall_time_s": 8.925,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 2.344,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 1.774,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 459,
+          "wall_time": 6.581,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "summary",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 1004,
+      "prompt_tokens": 704,
+      "completion_tokens": 300,
+      "wall_time_s": 6.104,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 2.253,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 251,
+          "wall_time": 2.679,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 480,
+          "wall_time": 3.424,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 891,
+      "prompt_tokens": 591,
+      "completion_tokens": 300,
+      "wall_time_s": 15.932,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 1.882,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 4.867,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 459,
+          "wall_time": 11.064,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 945,
+      "prompt_tokens": 691,
+      "completion_tokens": 254,
+      "wall_time_s": 22.453,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 10.387,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 1.543,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 433,
+          "wall_time": 12.065,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "action_state",
+      "run": 1,
+      "success": false,
+      "tokens": 1041,
+      "prompt_tokens": 741,
+      "completion_tokens": 300,
+      "wall_time_s": 5.585,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 2.044,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 251,
+          "wall_time": 1.59,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 517,
+          "wall_time": 3.541,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "action_state",
+      "run": 1,
+      "success": true,
+      "tokens": 913,
+      "prompt_tokens": 613,
+      "completion_tokens": 300,
+      "wall_time_s": 18.033,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 1.971,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 6.209,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 481,
+          "wall_time": 11.823,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "action_state",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 996,
+      "prompt_tokens": 697,
+      "completion_tokens": 299,
+      "wall_time_s": 7.231,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 1.54,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 250,
+          "wall_time": 1.4,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 473,
+          "wall_time": 5.689,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 916,
+      "prompt_tokens": 616,
+      "completion_tokens": 300,
+      "wall_time_s": 7.355,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 4.44,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 2.445,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 484,
+          "wall_time": 2.915,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 1021,
+      "prompt_tokens": 721,
+      "completion_tokens": 300,
+      "wall_time_s": 14.453,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 1.736,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 1.633,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 509,
+          "wall_time": 12.716,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "action_state",
+      "run": 3,
+      "success": false,
+      "tokens": 996,
+      "prompt_tokens": 697,
+      "completion_tokens": 299,
+      "wall_time_s": 8.586,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 273,
+          "wall_time": 1.46,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 250,
+          "wall_time": 2.909,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 473,
+          "wall_time": 5.675,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "action_state",
+      "run": 3,
+      "success": true,
+      "tokens": 917,
+      "prompt_tokens": 617,
+      "completion_tokens": 300,
+      "wall_time_s": 15.726,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 227,
+          "wall_time": 4.654,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 205,
+          "wall_time": 2.544,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 485,
+          "wall_time": 11.071,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "action_state",
+      "run": 3,
+      "success": false,
+      "tokens": 1021,
+      "prompt_tokens": 721,
+      "completion_tokens": 300,
+      "wall_time_s": 6.762,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "支付",
+            "扣款"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 267,
+          "wall_time": 2.362,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 245,
+          "wall_time": 1.416,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 509,
+          "wall_time": 4.399,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": false,
+      "tokens": 1040,
+      "prompt_tokens": 740,
+      "completion_tokens": 300,
+      "wall_time_s": 226.646,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 273,
+          "wall_time": 220.962,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 251,
+          "wall_time": 85.836,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 516,
+          "wall_time": 5.683,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": true,
+      "tokens": 927,
+      "prompt_tokens": 627,
+      "completion_tokens": 300,
+      "wall_time_s": 102.146,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 227,
+          "wall_time": 76.612,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 205,
+          "wall_time": 93.273,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 495,
+          "wall_time": 8.872,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": false,
+      "tokens": 1025,
+      "prompt_tokens": 725,
+      "completion_tokens": 300,
+      "wall_time_s": 101.282,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 267,
+          "wall_time": 81.307,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 245,
+          "wall_time": 50.365,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 513,
+          "wall_time": 19.974,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": true,
+      "tokens": 925,
+      "prompt_tokens": 625,
+      "completion_tokens": 300,
+      "wall_time_s": 47.76,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 227,
+          "wall_time": 37.048,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 205,
+          "wall_time": 37.186,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 493,
+          "wall_time": 10.572,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug1",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": false,
+      "tokens": 1046,
+      "prompt_tokens": 746,
+      "completion_tokens": 300,
+      "wall_time_s": 160.426,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "崩溃",
+            "crash",
+            "宕机"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "崩溃",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "崩溃",
+              "crash",
+              "宕机"
+            ],
+            [
+              "nullpointer",
+              "空指针",
+              "npe"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 273,
+          "wall_time": 64.179,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 251,
+          "wall_time": 153.672,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 522,
+          "wall_time": 6.752,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug2",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 927,
+      "prompt_tokens": 627,
+      "completion_tokens": 300,
+      "wall_time_s": 35.662,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "expected": {
+          "severity": "中",
+          "category": "功能异常",
+          "keywords": [
+            [
+              "中"
+            ],
+            [
+              "上传",
+              "头像",
+              "功能异常"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 227,
+          "wall_time": 30.921,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 205,
+          "wall_time": 30.452,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 495,
+          "wall_time": 4.739,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "bug_triage",
+      "instance": "bug3",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": false,
+      "tokens": 1025,
+      "prompt_tokens": 725,
+      "completion_tokens": 300,
+      "wall_time_s": 48.133,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [
+          [
+            "高"
+          ]
+        ],
+        "expected": {
+          "severity": "高",
+          "category": "支付",
+          "keywords": [
+            [
+              "高"
+            ],
+            [
+              "支付",
+              "扣款"
+            ]
+          ]
+        }
+      },
+      "steps": [
+        {
+          "id": "cat",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 267,
+          "wall_time": 44.62,
+          "success": true
+        },
+        {
+          "id": "sev",
+          "kind": "classify",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 245,
+          "wall_time": 41.736,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 513,
+          "wall_time": 3.513,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 435,
+      "prompt_tokens": 162,
+      "completion_tokens": 273,
+      "wall_time_s": 16.68,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 458,
+      "prompt_tokens": 160,
+      "completion_tokens": 298,
+      "wall_time_s": 4.188,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "single_agent",
+      "run": 1,
+      "success": true,
+      "tokens": 229,
+      "prompt_tokens": 117,
+      "completion_tokens": 112,
+      "wall_time_s": 5.251,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 409,
+      "prompt_tokens": 162,
+      "completion_tokens": 247,
+      "wall_time_s": 3.864,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 479,
+      "prompt_tokens": 160,
+      "completion_tokens": 319,
+      "wall_time_s": 3.654,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "single_agent",
+      "run": 2,
+      "success": true,
+      "tokens": 226,
+      "prompt_tokens": 117,
+      "completion_tokens": 109,
+      "wall_time_s": 1.747,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": true,
+      "tokens": 450,
+      "prompt_tokens": 160,
+      "completion_tokens": 290,
+      "wall_time_s": 3.393,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "single_agent",
+      "run": 3,
+      "success": true,
+      "tokens": 229,
+      "prompt_tokens": 117,
+      "completion_tokens": 112,
+      "wall_time_s": 3.263,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "full_context",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "full_context",
+      "run": 1,
+      "success": true,
+      "tokens": 2633,
+      "prompt_tokens": 1662,
+      "completion_tokens": 971,
+      "wall_time_s": 22.044,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 454,
+          "wall_time": 7.715,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 548,
+          "wall_time": 9.489,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 727,
+          "wall_time": 4.923,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 904,
+          "wall_time": 9.405,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "full_context",
+      "run": 1,
+      "success": true,
+      "tokens": 1795,
+      "prompt_tokens": 957,
+      "completion_tokens": 838,
+      "wall_time_s": 26.095,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 391,
+          "wall_time": 2.855,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 423,
+          "wall_time": 4.163,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 533,
+          "wall_time": 20.663,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 448,
+          "wall_time": 5.431,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "full_context",
+      "run": 2,
+      "success": true,
+      "tokens": 2394,
+      "prompt_tokens": 1285,
+      "completion_tokens": 1109,
+      "wall_time_s": 20.611,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 431,
+          "wall_time": 6.256,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 640,
+          "wall_time": 14.533,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 731,
+          "wall_time": 4.134,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 592,
+          "wall_time": 6.077,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "full_context",
+      "run": 2,
+      "success": true,
+      "tokens": 2177,
+      "prompt_tokens": 1272,
+      "completion_tokens": 905,
+      "wall_time_s": 11.695,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 543,
+          "wall_time": 2.395,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 589,
+          "wall_time": 8.263,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 531,
+          "wall_time": 2.948,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 514,
+          "wall_time": 3.43,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "full_context",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 2696,
+      "prompt_tokens": 1683,
+      "completion_tokens": 1013,
+      "wall_time_s": 25.183,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 478,
+          "wall_time": 12.944,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 633,
+          "wall_time": 4.63,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 731,
+          "wall_time": 8.535,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 854,
+          "wall_time": 7.608,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "full_context",
+      "run": 3,
+      "success": true,
+      "tokens": 2031,
+      "prompt_tokens": 1272,
+      "completion_tokens": 759,
+      "wall_time_s": 21.18,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 461,
+          "wall_time": 7.137,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 548,
+          "wall_time": 2.612,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 508,
+          "wall_time": 3.829,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 514,
+          "wall_time": 11.431,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "full_context",
+      "run": 3,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "summary",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "summary",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "summary",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "summary",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "summary",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "summary",
+      "run": 2,
+      "success": true,
+      "tokens": 1718,
+      "prompt_tokens": 944,
+      "completion_tokens": 774,
+      "wall_time_s": 11.561,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 349,
+          "wall_time": 2.827,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 474,
+          "wall_time": 3.376,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 501,
+          "wall_time": 4.973,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 394,
+          "wall_time": 5.356,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 2704,
+      "prompt_tokens": 1518,
+      "completion_tokens": 1186,
+      "wall_time_s": 29.722,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 469,
+          "wall_time": 7.58,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 641,
+          "wall_time": 5.697,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 731,
+          "wall_time": 4.884,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 863,
+          "wall_time": 17.258,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 2152,
+      "prompt_tokens": 1267,
+      "completion_tokens": 885,
+      "wall_time_s": 21.367,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 499,
+          "wall_time": 4.232,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 549,
+          "wall_time": 8.768,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 579,
+          "wall_time": 9.07,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 525,
+          "wall_time": 8.366,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "summary",
+      "run": 3,
+      "success": true,
+      "tokens": 1644,
+      "prompt_tokens": 951,
+      "completion_tokens": 693,
+      "wall_time_s": 23.557,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 354,
+          "wall_time": 16.304,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 424,
+          "wall_time": 2.922,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 484,
+          "wall_time": 6.263,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 382,
+          "wall_time": 4.33,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "action_state",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "action_state",
+      "run": 1,
+      "success": true,
+      "tokens": 2306,
+      "prompt_tokens": 1330,
+      "completion_tokens": 976,
+      "wall_time_s": 24.248,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 541,
+          "wall_time": 5.771,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 578,
+          "wall_time": 3.853,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 565,
+          "wall_time": 10.739,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 622,
+          "wall_time": 13.508,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "action_state",
+      "run": 1,
+      "success": true,
+      "tokens": 2022,
+      "prompt_tokens": 1060,
+      "completion_tokens": 962,
+      "wall_time_s": 20.022,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 391,
+          "wall_time": 7.311,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 454,
+          "wall_time": 2.935,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 641,
+          "wall_time": 15.642,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 536,
+          "wall_time": 4.379,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 2598,
+      "prompt_tokens": 1409,
+      "completion_tokens": 1189,
+      "wall_time_s": 29.247,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 478,
+          "wall_time": 7.936,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 643,
+          "wall_time": 4.913,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 731,
+          "wall_time": 14.467,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 746,
+          "wall_time": 14.78,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "action_state",
+      "run": 2,
+      "success": true,
+      "tokens": 2584,
+      "prompt_tokens": 1451,
+      "completion_tokens": 1133,
+      "wall_time_s": 45.745,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 453,
+          "wall_time": 22.997,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 635,
+          "wall_time": 9.217,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 727,
+          "wall_time": 24.25,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 769,
+          "wall_time": 13.531,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "action_state",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "action_state",
+      "run": 3,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "action_state",
+      "run": 3,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "action_state",
+      "run": 3,
+      "success": true,
+      "tokens": 1807,
+      "prompt_tokens": 1014,
+      "completion_tokens": 793,
+      "wall_time_s": 18.556,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 433,
+          "wall_time": 7.496,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 425,
+          "wall_time": 5.046,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 493,
+          "wall_time": 8.306,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 456,
+          "wall_time": 6.012,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": true,
+      "tokens": 2986,
+      "prompt_tokens": 1460,
+      "completion_tokens": 1526,
+      "wall_time_s": 53.482,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 731,
+          "wall_time": 17.406,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 733,
+          "wall_time": 17.722,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 731,
+          "wall_time": 10.693,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 791,
+          "wall_time": 25.382,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": true,
+      "tokens": 2932,
+      "prompt_tokens": 1417,
+      "completion_tokens": 1515,
+      "wall_time_s": 164.188,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 726,
+          "wall_time": 23.587,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 728,
+          "wall_time": 117.989,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 727,
+          "wall_time": 15.363,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 751,
+          "wall_time": 46.197,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "lightcomm",
+      "run": 1,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": false,
+      "tokens": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "wall_time_s": 0.0,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "error": "LLMError: 重试次数用尽"
+      },
+      "steps": []
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "lightcomm",
+      "run": 2,
+      "success": true,
+      "tokens": 2478,
+      "prompt_tokens": 1115,
+      "completion_tokens": 1363,
+      "wall_time_s": 45.174,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 641,
+          "wall_time": 10.718,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 641,
+          "wall_time": 36.042,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 641,
+          "wall_time": 29.683,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 555,
+          "wall_time": 4.772,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc1",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 3033,
+      "prompt_tokens": 1460,
+      "completion_tokens": 1573,
+      "wall_time_s": 39.619,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 731,
+          "wall_time": 15.107,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 733,
+          "wall_time": 15.2,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 731,
+          "wall_time": 31.981,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 838,
+          "wall_time": 7.637,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc2",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 2931,
+      "prompt_tokens": 1419,
+      "completion_tokens": 1512,
+      "wall_time_s": 27.362,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 726,
+          "wall_time": 8.778,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 728,
+          "wall_time": 10.846,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 727,
+          "wall_time": 9.489,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 750,
+          "wall_time": 9.094,
+          "success": true
+        }
+      ]
+    },
+    {
+      "task": "doc_edit",
+      "instance": "doc3",
+      "strategy": "lightcomm",
+      "run": 3,
+      "success": true,
+      "tokens": 2509,
+      "prompt_tokens": 1114,
+      "completion_tokens": 1395,
+      "wall_time_s": 43.218,
+      "cost_usd": 0.0,
+      "verify_detail": {
+        "missing": [],
+        "should_not_contain": []
+      },
+      "steps": [
+        {
+          "id": "edit0",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 641,
+          "wall_time": 27.097,
+          "success": true
+        },
+        {
+          "id": "edit1",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 641,
+          "wall_time": 10.806,
+          "success": true
+        },
+        {
+          "id": "edit2",
+          "kind": "edit",
+          "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "tokens": 641,
+          "wall_time": 12.903,
+          "success": true
+        },
+        {
+          "id": "fin",
+          "kind": "final",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "tokens": 586,
+          "wall_time": 5.314,
+          "success": true
+        }
+      ]
+    }
+  ]
+}
